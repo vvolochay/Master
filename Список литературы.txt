@@ -1,0 +1,40 @@
+B. Doerr and C. Winzen. Ranking-based black-box complexity.
+Algorithmica. To appear. DOI: 10.1007/s00453-012-9684-9.
+http://arxiv.org/pdf/1102.1140.pdf
+2012
+
+B. Doerr and C. Winzen. Reducing the arity in unbiased black-box
+complexity. Theor. Comput. Sci., 545:108–121, 2014.
+http://arxiv.org/pdf/1203.4111.pdf
+
+Andrew Chi-Chih Yao. Probabilistic computations: Toward a unified
+measure of complexity (extended abstract). In FOCS, pages 222–227. IEEE
+Computer Society, 1977.
+
+Stefan Droste, Thomas Jansen, and Ingo Wegener. Upper and lower bounds
+for randomized search heuristics in black-box optimization. Theory of
+Computing Systems, 39:525–544, 2006.
+
+T. Jansen and I. Wegener. Evolutionary algorithms — how to cope with
+plateaus of constant fitness and when to reject strings of the same fitness. In
+IEEE Trans. on Evolutionary Computation, volume 5, pages 589–599,
+2001.
+
+Per Kristian Lehre and Carsten Witt. Black-box search by unbiased
+variation. In Proceedings of Genetic and Evolutionary Computation
+Conference (GECCO’10), pages 1441– 1448. ACM, 2010.
+
+Benjamin Doerr Unbiased Black-Box Complexities of Jump Functions 2015
+
+Buzdalov, M., Kever, M., and Doerr, B. (2015). Upper and lower bounds on unrestricted black-box
+complexity of jumpn,. In Evolutionary Computation in Combinatorial Optimization, pp. 209–221.
+Lecture Notes in Computer Science, Vol. 9026.
+
+Lehre, P. K., and Witt, C. (2010). Black-box search by unbiased variation. In Proceedings of the
+Genetic and Evolutionary Computation Conference (GECCO), pp. 1441–1448.
+
+Lehre, P. K., and Witt, C. (2012). Black-box search by unbiased variation. Algorithmica, 64:623–642.
+
+Benjamin Doerr, Timo K¨otzing, and Carola Winzen. Too fast unbiased
+black-box algorithms. In Proc. of GECCO (Genetic and evolutionary
+computation), pages 2043–2050, 2011.
