@@ -8,7 +8,7 @@ class T:
 #	l -> diff bils
 #	s -> string from i and j
 	k = 0
-	s = -1
+	s = -1  
 	l = 0
 	
 	def __init__(self, i, j, same, diff):
@@ -31,16 +31,24 @@ def count(v1, v2):
 		if v1[i] != v2[i] : diff.append(i)
 		else: same.append(i)
 	return same, diff	
+
+def genT():	
+	levels = []
+	gen(levels) 
+
+	n = levels[0].indexes[0]
 	
-levels = []
-gen(levels) 
+	Tlist = []
+	mas = [[] * n] * 2	# [][] - same(e), diff(d)
 
-n = levels[0].indexes[0]
+	for i in levels[len(levels) - 1].masks:
+		for j in levels[len(levels) - 1].masks:
+			e, d = count(i, j)  # e - same, d - diff 
+			t = T(i, j, e, d)
+			Tlist.append(t)
+#			mas[e][d]#.append(Tlist.index(t))		
+	return Tlist, mas
 
-Tlist = []
+#for s in T:
+#	print(s.s)
 
-for i in levels[len(levels) - 1].masks:
-	for j in levels[len(levels) - 1].masks:
-		e, d = count(i, j)  # e - same, d - diff 
-		Tlist.append(T(i, j, e, d))
-print(len(Tlist))
