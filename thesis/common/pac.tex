@@ -1,0 +1,23 @@
+%%% Проверка используемого TeX-движка %%%
+\usepackage{iftex}
+\newif\ifxetexorluatex   % определяем новый условный оператор (http://tex.stackexchange.com/a/47579/79756)
+\ifXeTeX
+    \xetexorluatextrue
+\else
+    \ifLuaTeX
+        \xetexorluatextrue
+    \else
+        \xetexorluatexfalse
+    \fi
+\fi
+
+
+%%% Кодировки и шрифты %%%
+\ifxetexorluatex
+    \usepackage{polyglossia}                        % Поддержка многоязычности (fontspec подгружается автоматически)
+\else
+
+    \usepackage[utf8]{inputenc}
+    \usepackage[english, russian]{babel}            % Языки: русский, английский
+    \IfFileExists{pscyr.sty}{\usepackage{pscyr}}{}  % Красивые русские шрифты
+\fi
