@@ -1,0 +1,170 @@
+\documentclass[specification,annotation,times]{itmo-student-thesis}
+
+%% Опции пакета:
+%% - specification - если есть, генерируется задание, иначе не генерируется
+%% - annotation - если есть, генерируется аннотация, иначе не генерируется
+%% - times - делает все шрифтом Times New Roman, требует пакета pscyr.
+
+%% Данные пакеты необязательны к использованию в бакалаврских/магистерских
+%% Они нужны для иллюстративных целей
+
+%% Начало
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{filecontents}
+\begin{filecontents}{master-thesis.bib}
+@inproceedings{ example-english,
+    year        = {2015},
+    booktitle   = {Proceedings of IEEE Congress on Evolutionary Computation},
+    author      = {Maxim Buzdalov and Anatoly Shalyto},
+    title       = {Hard Test Generation for Augmenting Path Maximum Flow 
+                   Algorithms using Genetic Algorithms: Revisited},
+    pages       = {2121-2128},
+    langid      = {english}
+}
+
+@article{ example-russian,
+    author      = {Максим Викторович Буздалов},
+    title       = {Генерация тестов для олимпиадных задач по программированию 
+                   с использованием генетических алгоритмов},
+    journal     = {Научно-технический вестник {СПбГУ} {ИТМО}},
+    number      = {2(72)},
+    year        = {2011},
+    pages       = {72-77},
+    langid      = {russian}
+}
+
+@article{ unrestricted-jump-evco,
+    author      = {Maxim Buzdalov and Benjamin Doerr and Mikhail Kever},
+    title       = {The Unrestricted Black-Box Complexity of Jump Functions},
+    journal     = {Evolutionary Computation},
+    year        = {2016},
+    note        = {Accepted for publication},
+    langid      = {english}
+}
+
+\end{filecontents}
+%% Конец
+
+%% Указываем файл с библиографией.
+\addbibresource{master-thesis.bib}
+
+\begin{document}
+
+\studygroup{M4239}
+\title{Верхние и нижние оценки несмещенной вычислительной сложности оптимизационной задачи Needle}
+\author{Волочай Виктория Олеговна}{Волочай В.О.}
+\supervisor{Буздалов Максим Викторович}{Буздалов М.В.}{канд. техн. наук}{доцент кафедры компьютерных технологий Университета ИТМО}
+\publishyear{2016}
+%% Дата выдачи задания. Можно не указывать, тогда надо будет заполнить от руки.
+%\startdate{01}{сентября}{2013}
+%% Срок сдачи студентом работы. Можно не указывать, тогда надо будет заполнить от руки.
+%\finishdate{31}{мая}{2015}
+%% Дата защиты. Можно не указывать, тогда надо будет заполнить от руки.
+\defencedate{21}{июня}{2016}
+
+%\addconsultant{}{}
+%\addconsultant{}{}
+
+%% Задание
+%%% Техническое задание и исходные данные к работе
+\technicalspec{Необходимо рассмотреть алгоритм решения задачи оптимизационной задачи Needle, применив к задаче модификации, основанные на идеях black-box сложности. Соответственно, необходимо оценить время работы алгоритмов, использующих для решения несмещенные операторы, таким образом получив верхние и нижние оценки.}
+
+%%% Содержание выпускной квалификационной работы (перечень подлежащих разработке вопросов)
+\plannedcontents{Работа должна содержать обзор предметной области, в частности, описания задачи Needle, black-box сложности, модели несмещенной сложности и несмещенных операторов. Так же основная часть работы должна представлять собой описание применения black-box оптимизации к задаче и её решений с использованием несмещенных операторов. Результатом работы должны быть оценки времени работы конкретного алгоритма, решающего задачу, являющиеся верхними оценками, а так же нижние оценки на сложность работы алгоритмов на данном классе задач.}
+
+%%% Исходные материалы и пособия 
+\plannedsources{\begin{enumerate}
+    \item B. Doerr and C. Winzen. Reducing the arity in unbiased black-box complexity. Theor. Comput. Sci., 545:108–121, 2014;
+    \item Stefan Droste, Thomas Jansen, and Ingo Wegener. Upper and lower bounds for randomized search heuristics in black-box optimization. Theory of Computing Systems, 39:525–544, 2006
+    \item Per Kristian Lehre and Carsten Witt. Black-box search by unbiased variation. In Proceedings of Genetic and Evolutionary Computation Conference (GECCO’10), pages 1441– 1448. ACM, 2010.
+\end{enumerate}}
+
+%%% Календарный план
+\addstage{Ознакомление с оптимизационной задачей Needle}{12.2014}
+\addstage{Ознакомление с black-box сложностью и несмещенной моделью}{12.2014}
+\addstage{Исследование алгоритмов решения задачи с применением несмещенных операторов арностей k = 1, 2, 3}{09.2015}
+\addstage{Моделирование работы алгоритмов}{11.2015}
+\addstage{Написание пояснительной записки}{03.2016}
+
+%%% Цель исследования
+\researchaim{Нахождение верхних и нижних оценок времени работы алгоритмов, решающих задачу Needle с помощью несмещенных операторов.}
+
+%%% Задачи, решаемые в ВКР
+\researchtargets{\begin{enumerate}
+    \item Рассмотрение задачи Needle в несмещенной модели. 
+    \item Нахождение верхних и нижних оценок для алгоритмов арностей k = 1, 2, 3;
+\end{enumerate}}
+
+
+%%% Использование современных пакетов компьютерных программ и технологий
+\advancedtechnologyusage{Для
+реализации алгоритмов и оценки времени работы был использован язык программирования Python, а так же библиотеки Numpy и Matplotlib, использованные для анализа алгоритмов и построения графиков. В качестве сред для разработки использовались PyCharm и Spyder. Для написания пояснительной записки было использовано издательское ПО \LaTex.}
+
+%%% Краткая характеристика полученных результатов 
+\researchsummary{Были найдены верхние оценки для
+несмещенных операторов арностей 1, 2, 3, решающих задачу Needle. Было установлено, что верхняя и нижняя оценка времени работы тернарного оператора совпадают.}
+
+%%% Гранты, полученные при выполнении работы 
+\researchfunding{Нет.}
+
+%%% Наличие публикаций и выступлений на конференциях по теме выпускной работы
+\researchpublications{По теме этой работы были выступения на следующих конференциях
+\begin{enumerate}
+    \item Конференция молодых ученых 2016
+    \item Конференция СПИСОК 2016
+\end{enumerate}
+По результатам конференций будут выпущены сборники с материалами работы.
+}
+
+%% Эта команда генерирует титульный лист и аннотацию.
+\maketitle{Магистр}
+
+%% Оглавление
+\tableofcontents
+
+%% Макрос для введения. Совместим со старым стилевиком.
+
+
+\startthechapters
+\input{parts/intro.tex}
+\input{parts/chapter1.tex}
+\input{parts/chapter2.tex}
+\input{parts/chapter3.tex}
+
+\input{parts/outro.tex}
+
+%% Обратите внимание на heading. Без него тоже работает, но название будет другим.
+%\printmainbibliography
+
+\begin{thebibliography}{9}
+\bibitem{1} Per Kristian Lehre, Carsten Witt. \textit{Black-box search by unbiased variation}. In Proceedings of Genetic and Evolutionary Computation Conference (GECCO’ 10), p. 1441– 1448. ACM, 2010.
+%\bibitem{einstein} Albert Einstein. \textit{Zur Elektrodynamik %bewegter K{\"o}rper}. (German) [\textit{On the electrodynamics of %moving bodies}]. Annalen der Physik, 322(10):891–921, 1905.
+
+%\bibitem{knuthwebsite} Knuth: Computers and Typesetting,\\\texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
+
+\bibitem{2} Stefan Droste, Thomas Jansen, and Ingo Wegener. \textit{Upper and lower bounds for randomized search heuristics in black-box optimization}. Theory of Computing Systems, 39:525–544, 2006.
+
+\bibitem{3} B. Doerr and C. Winzen. \textit{Ranking-based black-box complexity}. Algorithmica. To appear. DOI: 10.1007/s00453-012-9684-9б 2012. \\\texttt{http://arxiv.org/pdf/1102.1140.pdf}
+
+\bibitem{4} B. Doerr and C. Winzen. \textitReducing the arity in unbiased black-box complexity}. Theor. Comput. Sci., 545:108–121, 2014 \\\texttt{http://arxiv.org/pdf/1203.4111.pdf}
+
+\bibitem{5} Andrew Chi-Chih Yao. \textit{Upper and lower bounds for randomized search heuristics in black-box optimization}. Probabilistic computations: Toward a unified measure of complexity (extended abstract). In FOCS, pages 222–227. IEEE Computer Society, 1977
+
+\bibitem{6} A. J. Ramirez, D. B. Knoester, B. H. Cheng, and P. K. Mckinley. \textit{Plato: a genetic algorithm approach to run-time reconfiguration in autonomic computing systems}. Cluster Computing, 14:229–244, 2011
+
+\bibitem{7} T. Jansen and I. Wegener. \textit{Evolutionary algorithms — how to cope with plateaus of constant fitness and when to reject strings of the same fitness}. In IEEE Trans. on Evolutionary Computation, volume 5, pages 589–599, 2001.
+
+\bibitem{8} Benjamin Doerr, Carola Doerr and Timo Kötzing. \textit{Unbiased Black-Box Complexities of Jump Functions}. Evolutionary Computation, volume 23 Issue 4, 2015 Pages 641-670 
+
+\bibitem{9} Buzdalov, M., Kever, M., and Doerr, B. \textit{Upper and lower bounds on unrestricted black-box complexity of $jump_{n,l}$}. In Evolutionary Computation in Combinatorial Optimization, pp. 209–221. Lecture Notes in Computer Science, Vol. 9026.
+
+\bibitem{10} Benjamin Doerr, Timo Kötzing  and Carola Winzen. \textit{Too fast unbiased black-box algorithms}. In Proc. of GECCO (Genetic and evolutionary computation), pages 2043–2050, 2011.
+
+\bibitem{11} Benjamin Doerr, Carola Doerr and Franziska Ebel. \textit{From black-box complexity to designing new genetic algorithms}. Theoretical Computer Science archive Volume 567 Issue C, 2015 Pages 87-104
+
+\bibitem{12} Doerr, B., Doerr, C., Ebel, F. \textit{Lessons from the black-box: fast crossover-based genetic algorithms}. In Proceedings of Genetic and Evolutionary Computation Conference. pp. 781–788 (2014)
+
+\bibitem{13} Doerr, B.\textit{ Analyzing randomized search heuristics: Tools from probability theory}. In A. Auger and B. Doerr (Eds.), Theory of randomized search heuristics, pp. 1–20 (2011)
+
+\end{document}
