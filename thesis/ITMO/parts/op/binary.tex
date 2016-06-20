@@ -75,7 +75,7 @@ $$L_0 = \langle \{\{ 1...n \}\}, \{0\} \rangle $$
 
 \begin{figure}[H]
 \caption{Распределение для n = 6}\label{fig1}
-    \includegraphics[height=10cm]{ITMO/pic/figure_6.png}
+    \includegraphics[height=10cm]{ITMO/pic/fig6_n.png}
 \end{figure}
 
 Для улучшения результатов, применим к получившемся множествам некоторые преобразования. Сравним некоторые множества $T_{ijkl}$ между собой на наличие повторяющихся строк следующим образом: 
@@ -99,7 +99,7 @@ $$L_0 = \langle \{\{ 1...n \}\}, \{0\} \rangle $$
 
 \begin{figure}[H]
 \caption{Выборка непересекающихся множеств для n = 6, подход 1 }\label{fig2}
-    \includegraphics[height=10cm]{ITMO/pic/fig666.png}
+    \includegraphics[height=10cm]{ITMO/pic/fig6_mod2.png}
 \end{figure}
 
 
@@ -108,6 +108,29 @@ $$L_0 = \langle \{\{ 1...n \}\}, \{0\} \rangle $$
 
 \begin{figure}[H]
 \caption{Выборка непересекающихся множеств для n = 6, подход 2 }\label{fig2}
-    \includegraphics[height=10cm]{ITMO/pic/figure666.png}
+    \includegraphics[height=10cm]{ITMO/pic/fig6_mod3.png}
 \end{figure}
 
+В результате вызыва алгоритма для особей маленьких размеров, было замечено, что размер множества с повторами от увеличения размера особи растет экспоненциально. В таблице представлены результаты запуска для некоторых векторов:
+
+\begin{table}[!h]
+\caption{Результаты работы алгоритма с бинарными операторами}\label{tab3:apx}
+\centering
+\begin{tabu}{|*{6}{X[c]|}}\hline
+n & 3 & 4 & 5 & 6 & 7  \\
+\hline
+set size & 8 & 16 & 32 & 64 & 128 \\
+\hline
+{T' size} & 64 & 256 & 1024 & 4096 & 16384  \\
+\hline
+{mod(T') size} & 11 & 36 & 73 & 144 & 302  \\
+\hline
+\end{tabu}
+\end{table}
+
+Так же ниже на рис. 7 приводится диаграмма по количеству полученных совпавших строк и количеству оставшихся после модификации (берется лучшее значение).
+
+\begin{figure}[H]
+\caption{Экспериментально полученные результаты}\label{fig2}
+    \includegraphics[height=10cm]{ITMO/pic/res_bin.png}
+\end{figure}
